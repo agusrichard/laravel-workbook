@@ -70,23 +70,22 @@
                 <div class="title m-b-md">
                     Pizza List
                 </div>
-                <p>{{ $type }} - {{ $base }} - {{ $price }}</p>
-                @if ($price > 15) 
-                  <p>This pizza is expensive</p>
-                @elseif ($price < 5)
-                  <p>This pizza is cheap</p>
-                @else
-                  <p>This pizza is normally priced</p>
-                @endif
 
-                @unless ($base == 'Garlic')
-                  <p>You don't have Cheesy Crust</p>
-                @endunless
+                <!-- @for($i = 0; $i < count($pizzas); $i++)
+                  <p>{{ $pizzas[$i]['type'] }}</p>
+                  <small>{{ $pizzas[$i]['base'] }}</small>
+                @endfor -->
 
-                @php
-                  $name = 'Agus Richard';
-                  echo $name;
-                @endphp
+                @foreach ($pizzas as $pizza) 
+                  <p>{{ $loop->index + 1 }} {{ $pizza['type'] }} - {{ $pizza['base'] }}
+                  @if ($loop->first)
+                    <span> - First in the loop</span>
+                  @endif
+                  @if ($loop->last)
+                    <span> - Last in the loop</span>
+                  @endif
+                  </p>
+                @endforeach
             </div>
         </div>
     </body>
