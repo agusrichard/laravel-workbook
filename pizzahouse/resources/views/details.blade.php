@@ -7,7 +7,6 @@
       <div class="title m-b-md">
           Pizza List - {{ $id }}
       </div>
-
   </div>
 </div>
 @endsection
