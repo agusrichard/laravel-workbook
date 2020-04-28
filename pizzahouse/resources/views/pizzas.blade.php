@@ -8,10 +8,7 @@
           Pizza List
       </div>
 
-      <!-- @for($i = 0; $i < count($pizzas); $i++)
-        <p>{{ $pizzas[$i]['type'] }}</p>
-        <small>{{ $pizzas[$i]['base'] }}</small>
-      @endfor -->
+      <p>{{ $name }} -- {{ $age }}</p>
 
       @foreach ($pizzas as $pizza) 
         <p>{{ $loop->index + 1 }} {{ $pizza['type'] }} - {{ $pizza['base'] }}
